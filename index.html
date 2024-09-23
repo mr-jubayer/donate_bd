@@ -91,7 +91,10 @@
             <!-- for lg device -->
             <div class="md:flex justify-center hidden">
               <img src="./assets/coin.png" alt="" class="h-6 mr-1" />
-              <p><span class="ml-1">6999</span> <span>BDT</span></p>
+              <div class="flex">
+                <p class="mr-2" id="user-balence">46000</p>
+                <span>BDT</span>
+              </div>
             </div>
 
             <!-- for mabile -->
@@ -99,11 +102,12 @@
               <summary class="list-none cursor-pointer">
                 <img src="./assets/coin.png" alt="" class="h-6 mr-1" />
               </summary>
-              <p
+              <div
                 class="absolute z-20 right-0 flex bg-white p-3 shadow-md rounded-md"
               >
-                <span class="mr-2">6999</span> <span>BDT</span>
-              </p>
+                <p class="mr-2" id="user-m-balence">46000</p>
+                <span>BDT</span>
+              </div>
             </details>
           </div>
         </nav>
@@ -143,11 +147,14 @@
                 <div class="bg-gray-100 inline-block py-3 px-4 rounded-md mb-3">
                   <div class="flex items-center">
                     <img src="./assets/coin.png" alt="" class="h-6 mr-1" />
-                    <p><span class="ml-1">1,23,400</span> <span>BDT</span></p>
+                    <div class="flex gap-1">
+                      <p class="ml-1" id="noakhaliDonatedValue">153400</p>
+                      <span>BDT</span>
+                    </div>
                   </div>
                 </div>
                 <!-- title -->
-                <h3 class="font-bold text-customLg mb-4 mt-1">
+                <h3 class="font-bold text-customLg mb-4 mt-1" id="n-title">
                   Donate for Flood at Noakhali, Bangladesh
                 </h3>
                 <p>
@@ -166,15 +173,14 @@
                   <input
                     type="text"
                     placeholder="Write Donation Amount"
-                    name=""
-                    id=""
+                    id="noakhali-inputDonate"
                     class="w-full input mt-5 mb-3 outline outline-gray-200"
                   />
 
                   <!-- Open the modal using ID.showModal() method -->
                   <button
                     class="btn font-medium md:text-customLg px-6 bg-gradient-to-l from-[#86EFAC] to-primary w-full"
-                    onclick="my_modal_1.showModal()"
+                    id="noakhali-donatingBtn"
                   >
                     Donate Now
                   </button>
@@ -209,11 +215,14 @@
                 <div class="bg-gray-100 inline-block py-3 px-4 rounded-md mb-3">
                   <div class="flex items-center">
                     <img src="./assets/coin.png" alt="" class="h-6 mr-1" />
-                    <p><span class="ml-1">1,23,400</span> <span>BDT</span></p>
+                    <div class="flex gap-2">
+                      <p id="feniOrgAmt" class="ml-1">253200</p>
+                      <span>BDT</span>
+                    </div>
                   </div>
                 </div>
                 <!-- title -->
-                <h3 class="font-bold text-customLg mb-4 mt-1">
+                <h3 class="font-bold text-customLg mb-4 mt-1" id="f-title">
                   Donate for Flood Relief in Feni,Bangladesh
                 </h3>
                 <p>
@@ -235,12 +244,12 @@
                     type="text"
                     placeholder="Write Donation Amount"
                     name=""
-                    id=""
+                    id="feni-inputDonate"
                     class="w-full input mt-5 mb-3 outline outline-gray-200"
                   />
                   <button
                     class="btn font-medium md:text-customLg px-6 bg-gradient-to-l from-[#86EFAC] to-primary w-full"
-                    onclick="my_modal_2.showModal()"
+                    id="feni-donatingBtn"
                   >
                     Donate Now
                   </button>
@@ -275,12 +284,15 @@
                 <div class="bg-gray-100 inline-block py-3 px-4 rounded-md mb-3">
                   <div class="flex items-center">
                     <img src="./assets/coin.png" alt="" class="h-6 mr-1" />
-                    <p><span class="ml-1">1,23,400</span> <span>BDT</span></p>
+                    <div class="flex gap-2">
+                      <p id="qoutaOrgAmt" class="ml-1">43600</p>
+                      <span>BDT</span>
+                    </div>
                   </div>
                 </div>
                 <!-- title -->
-                <h3 class="font-bold text-customLg mb-4 mt-1">
-                  Aid for Injured in the Quota Movement
+                <h3 class="font-bold text-customLg mb-4 mt-1" id="q-title">
+                  Donate for Injured in the Quota Movement
                 </h3>
                 <p>
                   Here's the extended version of the text with an additional 2-3
@@ -302,13 +314,12 @@
                   <input
                     type="text"
                     placeholder="Write Donation Amount"
-                    name=""
-                    id=""
+                    id="qouta-inputDonate"
                     class="w-full input mt-5 mb-3 outline outline-gray-200"
                   />
                   <button
                     class="btn font-medium md:text-customLg px-6 bg-gradient-to-l from-[#86EFAC] to-primary w-full"
-                    onclick="my_modal_3.showModal()"
+                    id="qouta-donatingBtn"
                   >
                     Donate Now
                   </button>
@@ -335,26 +346,14 @@
         </div>
         <!-- history tab -->
         <div class="space-y-4 hidden" id="history-container">
-          <div class="rounded-md border-[1.4px] p-5">
-            <h3 class="font-bold md:text-customLg mb-2 flex gap-2 text-left">
-              <p id="palce-name">
-                <span id="doanted-amount">0000</span>
-                Taka Donate for Flood at Noakhali, Bangladesh
-              </p>
-            </h3>
-            <p class="text-gray-600 md:text-sm text-xs">
-              Date :
-              <span id="date"
-                >Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard
-                Time)</span
-              >
-            </p>
-          </div>
+          <h2 id="emptyHis" class="text-error text-3xl text-center mt-6">
+            Empty History
+          </h2>
         </div>
       </section>
     </main>
     <!-- js code here -->
-    <script src="./jsCode/selectElById.js"></script>
+    <script src="./jsCode/reusebleFunction.js"></script>
     <script src="./jsCode/main.js"></script>
   </body>
 </html>
