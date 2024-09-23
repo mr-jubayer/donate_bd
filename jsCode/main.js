@@ -50,7 +50,7 @@ noakhaliDonateBtn.addEventListener("click", function () {
   const modalId = my_modal_1;
   donatePeople(noakhaliOrganizeAmt, noakhaliOrgTitle, inputDonate, modalId);
 });
-// doante fo feni
+// doante for feni
 const feniDonateBtn = selectElById("feni-donatingBtn");
 feniDonateBtn.addEventListener("click", function () {
   const feniOrgAmt = selectElById("feniOrgAmt");
@@ -59,7 +59,7 @@ feniDonateBtn.addEventListener("click", function () {
   const modalId = my_modal_2;
   donatePeople(feniOrgAmt, feniOrgTitle, inputDonate, modalId);
 });
-// doante fo qouta injured people
+// doante for qouta injured people
 const qoutaInjuredDonateBtn = selectElById("qouta-donatingBtn");
 qoutaInjuredDonateBtn.addEventListener("click", function () {
   const qoutaInjuredOrganizeAmt = selectElById("qoutaOrgAmt");
@@ -101,21 +101,24 @@ function donatePeople(orgAmt, orgTitle, inpDon, modalId) {
 
   let date = new Date();
 
-  newHistory.innerHTML = `
-            <h3 class="font-bold md:text-customLg mb-2 flex gap-2 text-left">
-              <p id="palce-name">
-                <span id="doanted-amount"> ${inputDonate} Taka</span>
-                ${orgTitle.innerText}
-              </p>
-            </h3>
-            <p class="text-gray-600 md:text-sm text-xs">
-              Date :
-              <span id="date"
-                >${date.toString()}
-                Time)</span
-              >
-            </p>`;
+  newHistory.innerHTML = `<h3 class="font-bold md:text-customLg mb-2 flex gap-2 text-left">
+          <p id="palce-name">
+              <span id="doanted-amount"> ${inputDonate} Taka</span>
+            ${orgTitle.innerText}
+        </p>
+      </h3>
+      <p class="text-gray-600 md:text-sm text-xs p-2 rounded-lg bg-gray-50">
+           Date :
+        <span id="date">${date.toString()}</span>
+    </p>`;
 
   historyContainer.insertBefore(newHistory, historyContainer.firstChild);
   inpDon.value = "";
 }
+
+// blog paga show click on blog btn
+const blog = selectElById("blog");
+
+blog.addEventListener("click", function () {
+  window.location.assign("http://127.0.0.1:5500/blog.html");
+});

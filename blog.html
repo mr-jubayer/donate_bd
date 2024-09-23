@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate BD || Donation To Fload Addicted People</title>
+    <!-- font awesome premiume icon link  -->
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-duotone-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-thin.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-solid.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-regular.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/sharp-light.css"
+    />
+    <!-- google font inter cdn -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google font cdn end -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- tailwind config object -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#36EFAC",
+            },
+            fontSize: {
+              small: "16px",
+              customLg: "18px",
+            },
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-inter">
+    <!-- header section start -->
+    <div class="sticky top-0 z-10">
+      <header class="bg-[#F9F7F3] bg-opacity-95 backdrop-blur-sm">
+        <nav
+          class="container mx-auto px-2 flex items-center justify-between pt-4 pb-8"
+        >
+          <!-- blog btn -->
+          <button
+            class="btn bg-primary font-medium md:text-customLg px-6 hover:bg-[#86EFAC]"
+            id="home"
+          >
+            <a href="http://127.0.0.1:5500/index.html">Home</a>
+          </button>
+          <!-- brand logo and name -->
+          <div class="flex items-center gap-2 cursor-pointer">
+            <img src="./assets/logo.png" alt="nav logo" class="md:h-8 h-6" />
+            <h2 class="font-bold md:text-customLg">Donate Bangladesh</h2>
+          </div>
+          <!-- user balance -->
+          <div class="font-bold flex items-center gap-1.5">
+            <!-- for lg device -->
+            <div class="md:flex justify-center hidden">
+              <img src="./assets/coin.png" alt="" class="h-6 mr-1" />
+              <div class="flex">
+                <p class="mr-2" id="user-balence">46000</p>
+                <span>BDT</span>
+              </div>
+            </div>
+
+            <!-- for mabile -->
+            <details class="relative md:hidden">
+              <summary class="list-none cursor-pointer">
+                <img src="./assets/coin.png" alt="" class="h-6 mr-1" />
+              </summary>
+              <div
+                class="absolute z-20 right-0 flex bg-white p-3 shadow-md rounded-md"
+              >
+                <p class="mr-2" id="user-m-balence">46000</p>
+                <span>BDT</span>
+              </div>
+            </details>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <!-- header section end -->
+    <main class="container mx-auto px-2">
+      <h3 class="text-3xl font-bold mt-8">
+        Important FAQ<i class="fa-sharp ml-2 fa-light fa-comment-question"></i>
+      </h3>
+      <div class="mt-6">
+        <div
+          class="collapse collapse-arrow border-[1.4px] rounded-none rounded-tl-md rounded-tr-md py-1"
+        >
+          <input type="radio" name="my-accordion-2" checked="checked" />
+          <div class="collapse-title text-md font-bold">
+            What is the Document Object Model (DOM)?
+          </div>
+          <div class="collapse-content">
+            <p>
+              The Document Object Model (DOM) is a programming interface that
+              allows us to display and manipulate JavaScript functionality and
+              CSS styles on a webpage. It is commonly used to dynamically add
+              and modify HTML elements, JavaScript behaviors, and CSS styles.
+            </p>
+          </div>
+        </div>
+        <div
+          class="collapse collapse-arrow border-[1.4px] rounded-none border-t-0 py-1"
+        >
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title text-md font-bold">
+            How do you select an element from the DOM?
+          </div>
+          <div class="collapse-content">
+            <p>
+              There are several ways to select an element from the DOM. We can
+              select elements by tag name, ID, or class name. For example, to
+              select an element by its ID, we can use:
+              document.getElementById(id).
+            </p>
+          </div>
+        </div>
+        <div
+          class="collapse collapse-arrow border-[1.4px] rounded-none border-t-0 py-1"
+        >
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title text-md font-bold">
+            What is event delegation in the context of the DOM, and why is it
+            useful?
+          </div>
+          <div class="collapse-content">
+            <p>
+              Event delegation is a technique where we attach a single event
+              listener to a parent element rather than adding separate event
+              listeners to each child element. When an event occurs, the
+              listener checks if the event target matches a specific child
+              element. This is useful because it improves performance by
+              reducing the number of event listeners and allows us to handle
+              dynamic elements that are added to the DOM after the initial event
+              binding.
+            </p>
+          </div>
+        </div>
+        <div
+          <div
+          class="collapse collapse-arrow border-[1.4px] rounded-none border-t-0 rounded-bl-md rounded-br-md py-1"
+        >
+          <input type="radio" name="my-accordion-2" />
+          <div class="collapse-title text-md font-bold">
+            How do you manipulate an element's attributes and styles using the
+            DOM?
+          </div>
+          <div class="collapse-content">
+            <p>
+              To manipulate an element's attributes and styles using the DOM,
+              there are several properties and methods available. For example,
+              .getAttribute() and .setAttribute() allow us to access and modify
+              an element’s attributes. To work with classes, we use the
+              classList property, which provides methods like .add() and
+              .remove(). For adding or modifying styles, the .style property is
+              used to directly apply CSS styles to an element, and so on...
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- js code here -->
+  </body>
+</html>
