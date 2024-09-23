@@ -74,10 +74,10 @@ function donatePeople(orgAmt, orgTitle, inpDon, modalId) {
   let inputDonate = parseFloat(inpDon.value);
   // donaton validation
   if (isNaN(inputDonate) || inputDonate <= 0) {
-    alert("amount is invalid");
+    alert("invalid amount entered!");
     return;
   } else if (inputDonate > parseUserBal) {
-    alert("you  don't have enough money for donate");
+    alert("You  don't have enough Money for donate");
     return;
   }
   modalId.showModal();
