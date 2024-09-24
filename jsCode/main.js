@@ -72,6 +72,8 @@ donationContainers.forEach((container) => {
     userBalance.innerText = userNumBal;
     userMobileBalance.innerText = userNumBal;
 
+    // add doanate amount on modal
+    selectElById("amount").innerText = parseDonateInp;
     // Add history
     let newHistory = document.createElement("div");
     newHistory.classList.add("rounded-md", "border-[1.4px]", "p-5");
