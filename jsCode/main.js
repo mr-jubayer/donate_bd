@@ -36,56 +36,57 @@ function showCurrentDatas(activeBtn, deActivebtn, showConten, hideContent) {
   showConten.classList.remove("hidden");
 }
 
-// donate people
 const userBalance = selectElById("user-balence");
 const userMobileBalance = selectElById("user-m-balence");
 
-const doantionContainers = document.querySelectorAll(".doantion-container");
-doantionContainers.forEach((container) => {
+// donate people
+const donationContainers = document.querySelectorAll(".donation-container");
+donationContainers.forEach((container) => {
   let orgCurrAmount = container.querySelector("#donatedAmount");
   let donateInput = container.querySelector("input");
   let donateBtn = container.querySelector("button");
-  let userNumBal = parseFloat(userBalance.innerText);
   let orgTitle = container.querySelector("#title");
 
   donateBtn.addEventListener("click", function () {
-    let parseDonateInp = parseFloat(donateInput.value);
+    let userNumBal = parseToNumber(userBalance.innerText);
+    let parseDonateInp = parseToNumber(donateInput.value);
 
     if (isNaN(parseDonateInp) || parseDonateInp <= 0) {
       alert("invalid amount entered!");
       return;
     } else if (parseDonateInp > userNumBal) {
-      alert("You  don't have enough Money for donate");
+      alert("You don't have enough Money for donate");
       return;
     }
+
     my_modal.showModal();
 
-    let organizeAmt = parseFloat(orgCurrAmount.innerText);
+    let organizeAmt = parseToNumber(orgCurrAmount.innerText);
 
-    // add to org amount of user amount
+    // Update amounts
     organizeAmt += parseDonateInp;
-    // subtruct user amount
     userNumBal -= parseDonateInp;
-    // show everything in the page
+
+    // Show updated amounts on the page
     orgCurrAmount.innerText = organizeAmt;
     userBalance.innerText = userNumBal;
-    userMobileBalance.innerText = userBalance;
+    userMobileBalance.innerText = userNumBal;
 
-    //   // add history
+    // Add history
     let newHistory = document.createElement("div");
     newHistory.classList.add("rounded-md", "border-[1.4px]", "p-5");
     selectElById("emptyHis").classList.add("hidden");
     let date = new Date();
 
     newHistory.innerHTML = `<h3 class="font-bold md:text-customLg mb-2 flex gap-2 text-left">
-                            <p id="palce-name">
-                            <span id="doanted-amount"> ${parseDonateInp} Taka</span>
-                          ${orgTitle.innerText}
-                           </p>
-                          </h3>
-                          <p class="text-gray-600 md:text-sm text-xs p-2 rounded-lg bg-gray-50">
-                            Date :
-                           <span id="date">${date.toString()}</span>
+                              <p id="palce-name">
+                              <span id="doanted-amount"> ${parseDonateInp} Taka</span>
+                              ${orgTitle.innerText}
+                              </p>
+                            </h3>
+                            <p class="text-gray-600 md:text-sm text-xs p-2 rounded-lg bg-gray-50">
+                              Date :
+                              <span id="date">${date.toString()}</span>
                             </p>`;
 
     historyContainer.insertBefore(newHistory, historyContainer.firstChild);
@@ -100,6 +101,12 @@ blog.addEventListener("click", function () {
   window.location.assign("http://127.0.0.1:5500/blog.html");
 });
 
-// function parseIntoNum(elem) {
-//   return parseFloat(elem.value);
-// }
+// parse string to nunber
+function parseToNumber(str) {
+  return parseFloat(str);
+}
+
+// costom selector with id
+function selectElById(id) {
+  return document.getElementById(id);
+}
