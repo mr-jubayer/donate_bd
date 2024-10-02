@@ -100,7 +100,7 @@ donationContainers.forEach((container) => {
 const blog = selectElById("blog");
 
 blog.addEventListener("click", function () {
-  window.location.assign("../blog.html");
+  window.location.assign("http://127.0.0.1:5500/blog.html");
 });
 
 // parse string to nunber
